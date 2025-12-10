@@ -1,1 +1,13 @@
-// Create your object here
+let cart = {
+    customerName : "Alex",
+    totalPrice : 0,
+    itemCount : 0
+}
+
+cart.items = ['apple', 'bananas', 'cherries']
+cart.itemCount = 3
+cart.totalPrice = 99.99
+
+delete cart.customerName
+
+console.log(cart)
