@@ -119,4 +119,4 @@ const grandTotal = orders.reduce((sum, order) => {
 
 Part A: `grandTotal` will equate to 135.
 Part B: The 0 stands for the initial or starting value of the accumulator, without this `sum` would start at the first object in the array which will cause an error.
-Part C: In the first iteration of reduce, the value of sum will be 0 since it will start at the initial value. The value of order will be the first element in the array which is `{id: 1, total: 45}` and what gets returned is 45 since 0 + 45 is 45.
+Part C: In the first iteration of reduce, the value of sum will be 0 since it will start at the initial value.  The value of order will be the first element in the array which is `{id: 1, total: 45}` and what gets returned is 45 since 0 + 45 is 45.
