@@ -25,4 +25,4 @@ console.log(totalCheckouts)
 // Hint: Start with 0 and compare each book's checkouts to your accumulator. If the book's checkouts are higher, return that number; otherwise, return the current accumulator.
 const mostCheckouts = books.reduce((max, currBook) => {
   return currBook.checkouts > max ? currBook.checkouts : max;
-}, 0);
+}, 0)

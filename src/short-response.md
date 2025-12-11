@@ -27,14 +27,18 @@ Part B: How would you modify the code so that reassigning `playlist2.songCount` 
 
 ### Response 1
 
-Your response...
+Part A:
+15 will be logged to the console because objects in JS are reference types, so when you do `const playlist2 = playlist1;` it doesn't create a copy of playlist 1 into playlist 2, rather it is using the refrence in the memory from playlist 1. That's why when we try to modify playlist 2 it will modify the same object, so when `playlist2.songCount` is changed to 15 `playlist1.songCount` is also changed to 15.
+
+Part B:
+I would modify this code by making a true copy of the object, I can do this by using the spread operator.
 
 **Corrected Code:**
 
 ```js
 // fix this!
 const playlist1 = { name: "My Favorites", songCount: 10 };
-const playlist2 = playlist1;
+const playlist2 = { ...playlist1 };
 playlist2.songCount = 15;
 console.log(playlist1.songCount);
 ```
@@ -61,7 +65,10 @@ For each task below, identify which array method (forEach, filter, map, find, or
 
 ### Response 2
 
-Your response...
+1. .filter
+2. .find
+3. .reduce
+4. .map
 
 ---
 
@@ -83,9 +90,7 @@ console.log(upperCaseLetters);
 
 ### Response 3
 
-Your response...
-
----
+This error occurs because of the line `letters.map(capatalize())` since capatalize has no argument passed there is a type error. The way to fix it is to remove the parenthesis after `capatalize` so it will looks like `letters.map(capatalized)` instead so now .map calls capatalize for each element in the array. How you would avoid this mistake in the future is by keeping in mind to not call a callback function, only use parenthesis after the callback function if you'd like to give the function something else to call.
 
 ## Prompt 4
 
@@ -112,4 +117,6 @@ const grandTotal = orders.reduce((sum, order) => {
 
 ### Response 4
 
-Your response...
+Part A: `grandTotal` will equate to 135.
+Part B: The 0 stands for the initial or starting value of the accumulator, without this `sum` would start at the first object in the array which will cause an error.
+Part C: In the first iteration of reduce, the value of sum will be 0 since it will start at the initial value. The value of order will be the first element in the array which is `{id: 1, total: 45}` and what gets returned is 45 since 0 + 45 is 45.
